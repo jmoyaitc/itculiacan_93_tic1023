@@ -7,6 +7,7 @@
 </head>
 <body>
 <h1>Tareas a realizar</h1>
+<nav><a href="creartarea.php">Agregar Tarea</a><nav>
 <ul>
 	<li>Finalizar este demo de paguina de inicio </li>
 	<li>Terminar de configurar el servidor de la clase </li>
