@@ -29,7 +29,7 @@ function UnaTarea($id, $descrip, $prioridad, $completado) {
 
 function LeerTarea($id) {
 	//Debe de regresar una tarea especifica.
-	return UnaTarea($id, "Esto esuna prueba", 3, "No");
+	return UnaTarea($id, "Esto esuna prueba", 2, "No");
 }
 
 function CrearTarea($tarea) {
