@@ -19,8 +19,9 @@ $mistareas = MisTareas(); //Llamar a la funcion del repositorio. a esta paguina 
 	//http://www.php.net/manual/es/control-structures.foreach.php se pueden utilizar muchos opciones aqui for while do . 
 	// Esto es un iterador http://en.wikipedia.org/wiki/Iterator
 	foreach($mistareas as $t) {
+	
 		?>
-		<li><?php echo $t["descripcion"]; ?> 
+		<li <?php if ($t["completado"] == "Si") echo "class=\"completado\"" ?> ><?php echo $t["descripcion"]; ?> 
 		<a href="editartarea.php?id=<?php echo $t["id"]; ?>">[Editar ] </a> 
 		<a href="borrartarea.php?id=<?php echo $t["id"]; ?>">[Borrar] </a>
 	    <a href="comentartarea.php?id=<?php echo $t["id"]; ?>">[Comentar ] </a>

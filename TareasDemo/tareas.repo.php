@@ -10,8 +10,8 @@ function MisTareas( ) {
 	$tareas = array();
 	$tareas[0] = UnaTarea(1,"Hacer la comida", 3, "No");
 	$tareas[1] = UnaTarea(2,"Aprender PHP " , 1, "No");
-	$tareas[2] = UnaTarea(3,"Leer las referencias de php", 2, "No");
-	$tareas[3] = UnaTarea(4,"Leer las referencias de html",3, "No");
+	$tareas[2] = UnaTarea(3,"Leer las referencias de php", 2, "Si");
+	$tareas[3] = UnaTarea(4,"Leer las referencias de html",3, "Si");
 	return $tareas;
 }
 
