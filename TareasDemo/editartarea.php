@@ -10,11 +10,11 @@ $tarea = LeerTarea($id);
 ?><DOCTYPE html>
 <html>
 <head>
-<title>Editar tarea XYZ</title>
+<title>Editar  <?php echo $tarea["descripcion"]; ?></title>
 <LINK href="site.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<h1>Editar Tarea XYZ</h1>
+<h1>Editar  <?php echo $tarea["descripcion"]; ?></h1>
 <nav><a href="index.php">Mis Tareas</a><nav>
 <!-- Un separador  -->
 <hr />
