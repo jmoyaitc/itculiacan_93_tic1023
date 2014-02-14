@@ -1,13 +1,17 @@
 <?php
   // Nada de codigo aun. solo el html.
+  require_once("tareas.repo.php");
+
+$id = $_GET['id'];
+$tarea = LeerTarea($id); 
 ?><DOCTYPE html>
 <html>
 <head>
-<title>Borrar tarea XYZ</title>
+<title>Borrar <?php echo $tarea["descripcion"]; ?></title>
 <LINK href="site.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<h1>Borrar Tarea XYZ</h1>
+<h1>Borrar <?php echo $tarea["descripcion"]; ?></h1>
 <nav><a href="index.php">Mis Tareas</a><nav>
 <!-- Un separador  -->
 <hr />
@@ -17,9 +21,11 @@
 <dt>
 	Tarea :
 <dt>
-<dd>Implementar borrar una tarea<dd>
+<dd><?php echo $tarea["descripcion"]; ?><dd>
 <dt>Prioridad : </dt>
-<dd>3<dd>
+<dd><?php echo $tarea["prioridad"]; ?><dd>
+<dt>Completada : </dt>
+<dd><?php echo $tarea["completado"]; ?><dd>
 </dl>
 <br />
 <input type="submit" value="Borrar"/>
