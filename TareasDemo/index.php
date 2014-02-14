@@ -4,6 +4,8 @@
 <html>
 <head>
 <title>Cosas que tengo que hacer el fin de semana.</title>
+<!-- http://www.w3.org/TR/html401/present/styles.html --->
+<LINK href="site.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <h1>Tareas a realizar</h1>

@@ -4,10 +4,11 @@
 <html>
 <head>
 <title>Crear nueva tarea</title>
+<LINK href="site.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <h1>Nueva Tarea</h1>
-<nav><a href="creartarea.php">Mis Tareas</a><nav>
+<nav><a href="index.php">Mis Tareas</a><nav>
 <!-- Un separador  -->
 <hr />
 <form method="POST">
