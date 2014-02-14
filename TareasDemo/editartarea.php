@@ -22,6 +22,12 @@
 	<option>4</option>
 </select>
 <br />
+<label for="completado"> Completada : </label>
+<select name="completado">
+	<option>Si</option>
+	<option>No</option>
+</select>
+<br/>
 <input type="submit" value="Actualizar"/>
 </form>
 </body>

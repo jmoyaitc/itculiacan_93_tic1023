@@ -10,3 +10,8 @@ body {
 	background-color: #BC682C;
 	color: #FEE427;
 }
+
+/* Selector de clase para completado Debe de tachar texto  http://www.w3schools.com/cssref/pr_text_text-decoration.asp */
+.completado {
+	text-decoration:line-through;
+}

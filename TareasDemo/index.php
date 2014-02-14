@@ -13,7 +13,7 @@
 <ul>
 	<li>Finalizar este demo de paguina de inicio <a href="editartarea.php">[Editar ] </a> <a href="borrartarea.php">[Borrar] </a>
 	<a href="comentartarea.php">[Comentar ] </a></li>
-	<li>Terminar de configurar el servidor de la clase </li>
+	<li class="completado" >Terminar de configurar el servidor de la clase </li>
 	<li>Revisar todas las tareas de mis Alumnos </li>
 <ul>
 </body>
