@@ -2,7 +2,7 @@
 require_once("tareas.repo.php");
 
 $mistareas = MisTareas(); //Llamar a la funcion del repositorio. a esta paguina no le importa de donde o como salen las tareas. 
-  // Nada de codigo aun. solo el html.
+  
 ?><DOCTYPE html>
 <html>
 <head>
@@ -20,12 +20,14 @@ $mistareas = MisTareas(); //Llamar a la funcion del repositorio. a esta paguina 
 	// Esto es un iterador http://en.wikipedia.org/wiki/Iterator
 	foreach($mistareas as $t) {
 		?>
-		<li><?php echo $t["descripcion"]; ?></li>
+		<li><?php echo $t["descripcion"]; ?> 
+		<a href="editartarea.php?id=<?php echo $t["id"]; ?>">[Editar ] </a> 
+		<a href="borrartarea.php?id=<?php echo $t["id"]; ?>">[Borrar] </a>
+	    <a href="comentartarea.php?id=<?php echo $t["id"]; ?>">[Comentar ] </a>
+		</li>
 	<?php
 	}
 	?>
-	<li>Finalizar este demo de paguina de inicio <a href="editartarea.php">[Editar ] </a> <a href="borrartarea.php">[Borrar] </a>
-	<a href="comentartarea.php">[Comentar ] </a></li>
 <ul>
 </body>
 </html>
