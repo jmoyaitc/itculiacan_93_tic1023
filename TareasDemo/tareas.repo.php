@@ -7,26 +7,44 @@
 // http://www.php.net/manual/en/functions.user-defined.php
 function MisTareas( ) {
 	// Debe de regresar una lista de todas mis tareas. 
-	return null;
+	$tareas = array();
+	$tareas[0] = UnaTarea(1,"Hacer la comida", 3, "No");
+	$tareas[1] = UnaTarea(2,"Aprender PHP " , 1, "No");
+	$tareas[2] = UnaTarea(3,"Leer las referencias de php", 2, "No");
+	$tareas[3] = UnaTarea(4,"Leer las referencias de html",3, "No");
+	return $tareas;
+}
+
+function UnaTarea($id, $descrip, $prioridad, $completado) {
+	//	http://www.php.net/manual/es/language.types.array.php
+	$t = array(
+	"id" => $id,
+	"descripcion" => $descrip,
+	"prioridad" => $prioridad,
+	"completado" => $completado
+	);
+	
+	return $t;
 }
 
 function LeerTarea($id) {
 	//Debe de regresar una tarea especifica.
-	return null;
+	return UnaTarea($id, "Esto esuna prueba", 3, "No");
 }
 
 function CrearTarea($tarea) {
 	// Debe de crear una tarea. 
-	return null;
+	return true;
 }
 
 function ActualizarTarea($tarea) {
 	//Debe de borrar una tarea si existe.
-	return null;
+	return true;
 }
 
 function BorrarTarea($tarea) {
 	//Debe de borrar la tarea si existe.
+	return true;
 }
 
 ?>
