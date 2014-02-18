@@ -11,7 +11,7 @@
 <nav><a href="index.php">Mis Tareas</a><nav>
 <!-- Un separador  -->
 <hr />
-<form method="POST">
+<form method="POST" action="creartarea.post.php">
 <label for="descripcion">Tarea : </label>
 <input type="text" value="" name="descripcion" /> <br />
 <label for="prioridad">Prioridad : </label>
