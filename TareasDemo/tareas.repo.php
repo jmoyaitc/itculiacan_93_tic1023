@@ -22,11 +22,22 @@ function AbrirConexion() {
 // http://www.php.net/manual/en/functions.user-defined.php
 function MisTareas( ) {
 	// Debe de regresar una lista de todas mis tareas. 
+	$query = "SELECT id, descripcion, prioridad, completado FROM Tareas ";
+	$link = AbrirConexion();
 	$tareas = array();
-	$tareas[0] = UnaTarea(1,"Hacer la comida", 3, "No");
-	$tareas[1] = UnaTarea(2,"Aprender PHP " , 1, "No");
-	$tareas[2] = UnaTarea(3,"Leer las referencias de php", 2, "Si");
-	$tareas[3] = UnaTarea(4,"Leer las referencias de html",3, "Si");
+	
+	if($r = $link->query($query)){
+		while($t = $r->fetch_assoc()) {
+			$tareas[] = $t;
+		}		
+		$r->free();
+		$link->close();
+	}else {
+		//Dejaremos esto aqui para saber que es lo que esta pasando. 
+		die("Error: ". $mysqli->error);
+		return array();
+	}
+	
 	return $tareas;
 }
 
@@ -38,7 +49,6 @@ function UnaTarea($id, $descrip, $prioridad, $completado) {
 	"prioridad" => $prioridad,
 	"completado" => $completado
 	);
-	
 	return $t;
 }
 
