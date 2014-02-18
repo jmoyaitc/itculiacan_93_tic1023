@@ -15,7 +15,7 @@ $tarea = LeerTarea($id);
 <nav><a href="index.php">Mis Tareas</a><nav>
 <!-- Un separador  -->
 <hr />
-<form method="POST">
+<form method="POST" action="borrartarea.post.php" >
 <h2>Seguro que desea hacer esto? </h2>
 <dl>
 <dt>
