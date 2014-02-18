@@ -94,7 +94,21 @@ function UnComentario($comen) {
 }
 
 function ComentarTarea($tareaid, $comentario) {
-	
+	// Debe de crear una tarea. 
+	// Que es NOW() es la manera de pedirle a mysql el tiempo actual del servidor. 
+	//http://dev.mysql.com/doc/refman/5.5/en/date-and-time-functions.html#function_now
+	$comando = "INSERT INTO Comentarios (tareaid, fecha, comentario) VALUES ( " 
+							. $tareaid . ",  NOW() ,'" . $comentario . "')";
+							
+	$link = AbrirConexion();
+	//http://www.php.net/manual/en/mysqli.query.php
+	if($r = $link->query($comando)){
+		return true;
+	}else {
+		//Dejaremos esto aqui para saber que es lo que esta pasando. 
+		die("Error: ". $link->error);
+		return false;
+	}
 	return true;
 }
 
