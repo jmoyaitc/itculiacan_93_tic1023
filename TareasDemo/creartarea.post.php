@@ -12,6 +12,12 @@ require_once("tareas.repo.php");
   $desc = $_POST["descripcion"];
   $prio = $_POST["prioridad"];
   
+  //Hay que verificar que tenga una descripcion la tarea si no, no se puede guardar. 
+  if(!isset($desc) || trim($desc)==='') {
+	header('Location: creartarea.php');
+	exit; //esto detiene la ejecucion del script. forzando a php a inmediatamente rediriguir. 
+  }
+  
   $tarea = array( "descripcion" => $desc,
 					"prioridad" => $prio
 					);
