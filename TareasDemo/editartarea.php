@@ -18,7 +18,7 @@ $tarea = LeerTarea($id);
 <nav><a href="index.php">Mis Tareas</a><nav>
 <!-- Un separador  -->
 <hr />
-<form method="POST">
+<form method="POST" action="editartarea.post.php" >
 <label for="descripcion">Tarea : </label>
 <input type="text" value="<?php echo $tarea["descripcion"]; ?>" name="descripcion" /> <br />
 <label for="prioridad">Prioridad : </label>
