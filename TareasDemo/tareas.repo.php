@@ -115,8 +115,21 @@ function CrearTarea($tarea) {
 }
 
 function ActualizarTarea($tarea) {
-	//Debe de borrar una tarea si existe.
-	return true;
+	//http://dev.mysql.com/doc/refman/5.0/en/update.html
+	$comando = "UPDATE Tareas SET descripcion = '". $tarea["descripcion"]."' ".
+							", prioridad = ". $tarea["prioridad"]." ".
+							", completado= '". $tarea["completado"]."' WHERE id = " . $tarea["id"]; 
+							
+							
+	$link = AbrirConexion();
+	//http://www.php.net/manual/en/mysqli.query.php
+	if($r = $link->query($comando)){
+		return true;
+	}else {
+		//Dejaremos esto aqui para saber que es lo que esta pasando. 
+		die("Error: ". $mysqli->error);
+		return false;
+	}
 }
 
 function BorrarTarea($tarea) {

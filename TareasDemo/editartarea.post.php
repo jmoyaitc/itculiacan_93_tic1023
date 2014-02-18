@@ -7,7 +7,7 @@ require_once("tareas.repo.php");
   
   $desc = $_POST["descripcion"];
   $prio = $_POST["prioridad"];
-  $comple = $_POST["compleatado"];
+  $comple = $_POST["completado"];
   $id = $_POST["id"];
   
   //Hay que verificar que tenga una descripcion la tarea si no, no se puede guardar. 
