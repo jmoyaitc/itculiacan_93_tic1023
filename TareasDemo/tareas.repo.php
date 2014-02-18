@@ -109,7 +109,7 @@ function CrearTarea($tarea) {
 		return true;
 	}else {
 		//Dejaremos esto aqui para saber que es lo que esta pasando. 
-		die("Error: ". $mysqli->error);
+		die("Error: ". $link->error);
 		return false;
 	}
 }
@@ -127,14 +127,25 @@ function ActualizarTarea($tarea) {
 		return true;
 	}else {
 		//Dejaremos esto aqui para saber que es lo que esta pasando. 
-		die("Error: ". $mysqli->error);
+		die("Error: ". $link->error);
 		return false;
 	}
 }
 
 function BorrarTarea($tarea) {
-	//Debe de borrar la tarea si existe.
-	return true;
+	//http://dev.mysql.com/doc/refman/5.0/en/delete.html
+	$comando = "DELETE FROM Tareas WHERE id = " . $tarea["id"]; 
+							
+							
+	$link = AbrirConexion();
+	//http://www.php.net/manual/en/mysqli.query.php
+	if($r = $link->query($comando)){
+		return true;
+	}else {
+		//Dejaremos esto aqui para saber que es lo que esta pasando. 
+		die("Error: ". $link->error);
+		return false;
+	}
 }
 
 ?>
