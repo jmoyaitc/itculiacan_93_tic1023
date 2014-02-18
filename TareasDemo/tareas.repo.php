@@ -53,8 +53,26 @@ function UnaTarea($id, $descrip, $prioridad, $completado) {
 }
 
 function LeerTarea($id) {
-	//Debe de regresar una tarea especifica.
-	return UnaTarea($id, "Esto esuna prueba", 2, "No");
+	// Debe de regresar una lista de todas mis tareas. 
+	$query = "SELECT id, descripcion, prioridad, completado FROM Tareas WHERE id=" .$id;
+	$link = AbrirConexion();
+	
+	$tarea = array();
+	
+	if($r = $link->query($query)){
+		if($t = $r->fetch_assoc()) {
+			$tarea = $t;
+		}		
+		$r->free();
+		$link->close();
+		return $tarea;
+	}else {
+		//Dejaremos esto aqui para saber que es lo que esta pasando. 
+		die("Error: ". $mysqli->error);
+		return array();
+	}
+	
+	return $tarea;
 }
 
 function LeerComentarios($id) {
