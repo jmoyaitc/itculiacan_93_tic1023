@@ -3,6 +3,21 @@
 // Este patron de diseño se llama repositorio, es simplemente generar una clase o libreria que se encarge de sacar todos los datos
 // De Tareas. 
 
+
+function AbrirConexion() {
+	//Ver documentacion: http://www.php.net/manual/es/function.mysqli-connect.php
+	$dbhost = "localhost";
+	$dbuser = "root";
+	$dbpass = "";
+	$db = "Tareas";
+	$link = new mysqli($dbhost,$dbuser,$dbpass,$db);
+		if($link->connect_errno) {
+			die("Error " . $link->connect_error);
+		}
+	return $link;
+}
+
+
 //En este caso haremos funciones 
 // http://www.php.net/manual/en/functions.user-defined.php
 function MisTareas( ) {
@@ -51,12 +66,24 @@ function UnComentario($comen) {
 }
 
 function ComentarTarea($tareaid, $comentario) {
+	
 	return true;
 }
 
 function CrearTarea($tarea) {
 	// Debe de crear una tarea. 
-	return true;
+	$comando = "INSERT INTO Tareas (descripcion, prioridad, completado) VALUES ( '" 
+							. $tarea["descripcion"] . "', '" . $tarea["prioridad"] . "', 'No')";
+							
+	$link = AbrirConexion();
+	//http://www.php.net/manual/en/mysqli.query.php
+	if($r = $link->query($comando)){
+		return true;
+	}else {
+		//Dejaremos esto aqui para saber que es lo que esta pasando. 
+		die("Error: ". $mysqli->error);
+		return false;
+	}
 }
 
 function ActualizarTarea($tarea) {
