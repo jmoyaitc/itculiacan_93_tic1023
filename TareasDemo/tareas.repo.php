@@ -50,6 +50,10 @@ function UnComentario($comen) {
 		);
 }
 
+function ComentarTarea($tareaid, $comentario) {
+	return true;
+}
+
 function CrearTarea($tarea) {
 	// Debe de crear una tarea. 
 	return true;

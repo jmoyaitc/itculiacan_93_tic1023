@@ -26,12 +26,13 @@
 		}
 	?>
 </dl>
-<form method="POST">
+<form method="POST" action="comentartarea.post.php">
 <span>Comentario  </span><br/>
 <textarea name="comentario">
 
 </textarea>
 <br />
+<input type="hiden" name="id" value="<?php echo $tarea["id"]; ?>" />
 <input type="submit" value="Comentar"/>
 </form>
 </body>

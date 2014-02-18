@@ -28,6 +28,7 @@ $tarea = LeerTarea($id);
 <dd><?php echo $tarea["completado"]; ?><dd>
 </dl>
 <br />
+<input type="hiden" name="id" value="<?php echo $tarea["id"]; ?>" />
 <input type="submit" value="Borrar"/>
 </form>
 </body>
