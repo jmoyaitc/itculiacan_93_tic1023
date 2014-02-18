@@ -159,12 +159,13 @@ function ActualizarTarea($tarea) {
 
 function BorrarTarea($tarea) {
 	//http://dev.mysql.com/doc/refman/5.0/en/delete.html
-	$comando = "DELETE FROM Tareas WHERE id = " . $tarea["id"]; 
+	$comando = "DELETE FROM Tareas WHERE id = " . $tarea["id"] . "; ". 
+			   " DELETE FROM Comentarios WHERE tareaid = " . $tarea["id"]; 
 							
 							
 	$link = AbrirConexion();
-	//http://www.php.net/manual/en/mysqli.query.php
-	if($r = $link->query($comando)){
+	//http://www.php.net/manual/en/mysqli.multi-query.php
+	if($r = $link->multi_query($comando)){
 		return true;
 	}else {
 		//Dejaremos esto aqui para saber que es lo que esta pasando. 
