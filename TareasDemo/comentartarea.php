@@ -1,24 +1,30 @@
 <?php
   // Nada de codigo aun. solo el html.
+  require_once("tareas.repo.php");
+	$id = $_GET['id'];
+	$tarea = LeerTarea($id); 
+	// Normalente estos datos puden salir directamente de LeerTarea, pero para simplificar utilizaremos una funcion aparte. 
+	$comentarios = LeerComentarios($id);
 ?><DOCTYPE html>
 <html>
 <head>
-<title>Borrar tarea XYZ</title>
+<title><?php echo $tarea["descripcion"]; ?></title>
 <LINK href="site.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<h1>Tarea XYZ ( 3 )</h1>
+<h1><?php echo $tarea["descripcion"]; ?> ( <?php echo $tarea["prioridad"]; ?> )</h1>
 <nav><a href="index.php">Mis Tareas</a><nav>
 <!-- Un separador  -->
 <hr />
 <h2>Comentarios : </h2>
 <dl>
-	<dt>1/1/2013<dt>
-	<dd>Se incio este trabajo <dd>
-	<dt>1/2/2013<dt>
-	<dd>Es muy divertido hacerlo<dd>
-	<dt>1/3/2013<dt>
-	<dd>Espero que les guste lo que hago.<dd>
+	<?php
+		foreach($comentarios as $c) {
+			?><dt><?php echo $c["fecha"]  ?></dt>
+			   <dd><?php echo $c["comentario"]; ?></dd>
+			<?php
+		}
+	?>
 </dl>
 <form method="POST">
 <span>Comentario  </span><br/>

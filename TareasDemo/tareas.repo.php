@@ -32,6 +32,24 @@ function LeerTarea($id) {
 	return UnaTarea($id, "Esto esuna prueba", 2, "No");
 }
 
+function LeerComentarios($id) {
+	$comentarios = array();
+	$comentarios[0] = UnComentario("Esto es una comentario");
+	$comentarios[1] = UnComentario("Otro comentario");
+	$comentarios[2] = UnComentario("Otro comentario ss");
+	$comentarios[3] = UnComentario("Que comentario");
+	return $comentarios;
+}
+
+function UnComentario($comen) {
+	$f = getdate();
+	
+	return array( 
+			"fecha" => $f["year"] . "-" . $f["mon"] . "-" .  $f["mday"],
+			"comentario" => $comen
+		);
+}
+
 function CrearTarea($tarea) {
 	// Debe de crear una tarea. 
 	return true;
