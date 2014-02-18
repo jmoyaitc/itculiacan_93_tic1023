@@ -34,7 +34,7 @@ function MisTareas( ) {
 		$link->close();
 	}else {
 		//Dejaremos esto aqui para saber que es lo que esta pasando. 
-		die("Error: ". $mysqli->error);
+		die("Error: ". $link->error);
 		return array();
 	}
 	
@@ -76,11 +76,22 @@ function LeerTarea($id) {
 }
 
 function LeerComentarios($id) {
+	$query = "SELECT fecha, comentario FROM Comentarios WHERE tareaid= ".$id;
+	$link = AbrirConexion();
 	$comentarios = array();
-	$comentarios[0] = UnComentario("Esto es una comentario");
-	$comentarios[1] = UnComentario("Otro comentario");
-	$comentarios[2] = UnComentario("Otro comentario ss");
-	$comentarios[3] = UnComentario("Que comentario");
+	
+	if($r = $link->query($query)){
+		while($t = $r->fetch_assoc()) {
+			$comentarios[] = $t;
+		}		
+		$r->free();
+		$link->close();
+	}else {
+		//Dejaremos esto aqui para saber que es lo que esta pasando. 
+		die("Error: ". $link->error);
+		return array();
+	}
+	
 	return $comentarios;
 }
 
