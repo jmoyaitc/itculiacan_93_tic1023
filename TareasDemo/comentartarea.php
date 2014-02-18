@@ -32,7 +32,7 @@
 
 </textarea>
 <br />
-<input type="hiden" name="id" value="<?php echo $tarea["id"]; ?>" />
+<input type="hidden" name="id" value="<?php echo $tarea["id"]; ?>" />
 <input type="submit" value="Comentar"/>
 </form>
 </body>
