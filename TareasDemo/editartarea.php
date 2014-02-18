@@ -51,6 +51,7 @@ $tarea = LeerTarea($id);
 	
 </select>
 <br/>
+<input type="hiden" name="id" value="<?php echo $tarea["id"]; ?>" />
 <input type="submit" value="Actualizar"/>
 </form>
 </body>
