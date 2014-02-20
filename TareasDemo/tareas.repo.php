@@ -7,9 +7,9 @@
 function AbrirConexion() {
 	//Ver documentacion: http://www.php.net/manual/es/function.mysqli-connect.php
 	$dbhost = "localhost";
-	$dbuser = "root";
-	$dbpass = "";
-	$db = "Tareas";
+	$dbuser = "jmoya";
+	$dbpass = "jmoya";
+	$db = "jmoya";
 	$link = new mysqli($dbhost,$dbuser,$dbpass,$db);
 		if($link->connect_errno) {
 			die("Error " . $link->connect_error);
