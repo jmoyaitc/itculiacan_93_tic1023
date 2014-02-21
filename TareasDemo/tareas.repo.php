@@ -22,7 +22,7 @@ function AbrirConexion() {
 // http://www.php.net/manual/en/functions.user-defined.php
 function MisTareas( ) {
 	// Debe de regresar una lista de todas mis tareas. 
-	$query = "SELECT id, descripcion, prioridad, completado FROM Tareas ";
+	$query = "SELECT id, descripcion, prioridad, completado FROM Tareas ORDER BY prioridad ASC ";
 	$link = AbrirConexion();
 	$tareas = array();
 	
@@ -109,7 +109,7 @@ function ComentarTarea($tareaid, $comentario) {
 	// Que es NOW() es la manera de pedirle a mysql el tiempo actual del servidor. 
 	//http://dev.mysql.com/doc/refman/5.5/en/date-and-time-functions.html#function_now
 	$comando = "INSERT INTO Comentarios (tareaid, fecha, comentario) VALUES ( " 
-							. $tareaid . ",  NOW() ,'" . $comentario . "')";
+							. $tareaid . ",  NOW() ," . $comentario . "')";
 							
 	$link = AbrirConexion();
 	//http://www.php.net/manual/en/mysqli.query.php
